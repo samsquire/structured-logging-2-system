@@ -1,9 +1,4 @@
 Request,Log,Machine
-login,User attempted login as :username and #password,client
-login,Received request to login as :username,server
-login,Testing password for :username,server
-login,Setting session for :username,server
-login,Finish handling user login,server
-login,Login successful,client
-feed,Fetching feed information,client
-feed,Retrieving feed information,server
+index,Checking if signed in,server
+index,Generating list of questions,server
+index,Sending sign in email,emailservice
