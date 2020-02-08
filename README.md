@@ -1,6 +1,6 @@
 # structured-logging-2-system
 
-Structure logging 2 system is how you use structured logging to handle request handling between microservices.
+Structure logging 2 system is an idea how you write a CSV file of your logging entries and have your system route itself based on the log lines. As each log line says where it runs.
 
 # CSV file
 
