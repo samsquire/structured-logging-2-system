@@ -18,3 +18,50 @@ feed	Fetching feed information	client
 feed	Retrieving feed information	server
 
 ```
+
+# Example
+
+```
+class Client:
+    def __init__(self):
+        pass
+
+    def request(self, url, context):
+            print("We need to make a call to {}".format(url))
+            print("Passing {}".format(context))
+
+
+class StructuredLog:
+    def __init__(self, filename, client):
+        self.client = client
+        self.lines_index = {}
+        self.lines = []
+        with open(filename, newline='') as csvfile:
+            for line in map(Line._make, csv.reader(csvfile)):
+                self.lines.append(line.line)
+                self.lines_index[line.line] = line
+
+    def emit(self, line):
+        self.line = line
+        print(line)
+
+    def next(self, context):
+        current_line_index = self.lines.index(self.line)
+        current_line = self.lines[current_line_index]
+        next_line_index = current_line_index + 1
+        next_line = self.lines[next_line_index]
+        self.line = next_line
+        # service is different
+        if self.lines_index[next_line].server != self.lines_index[current_line].server:
+            self.client.request(self.lines_index[next_line].server, context)
+```
+
+# Usage
+
+```
+sl = StructuredLog("log.csv", Client())
+
+sl.emit("Checking if signed in")
+signed_in, username, user_email, email_token, login_token = check_signed_in()
+sl.next({"username": username})
+```
