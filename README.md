@@ -1,6 +1,6 @@
 # structured-logging-2-system
 
-Structure logging 2 system is an idea how you write a CSV file of your logging entries and have your system route itself based on the log lines. As each log line says where it runs.
+Structure logging 2 system is an idea of distributing work across machines by using log lines to dictate where the flow of your application goes. You write a linearized view of your entire process into a CSV file and specify what machine each line should run on. While logging you specify when you are finished running a log line and the next system in the log is called.
 
 # CSV file
 
