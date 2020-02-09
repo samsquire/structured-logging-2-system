@@ -35,8 +35,7 @@ class Client:
 
     def request(self, url, context):
             print("We need to make a call to {}".format(url))
-            print("Passing {}".format(context))
-
+            print("Passing context {} to {}".format(context, url))
 
 class StructuredLog:
     def __init__(self, filename, client):
@@ -67,8 +66,20 @@ class StructuredLog:
 
 ```
 sl = StructuredLog("log.csv", Client())
-
 sl.emit("Checking if signed in")
 signed_in, username, user_email, email_token, login_token = check_signed_in()
+questions = []
 sl.next({"username": username})
+
+sl.emit("Generating list of questions")
+sl.next({})
+
+```
+
+```
+Checking if signed in
+Generating list of questions
+We need to make a call to emailservice
+Passing context {} to emailservice
+
 ```
