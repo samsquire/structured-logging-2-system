@@ -2,6 +2,10 @@
 
 Structure logging 2 system is an idea of distributing work across machines by using log lines to dictate where the flow of your application goes. You write a linearized view of your entire process into a CSV file and specify what machine each line should run on. While logging you specify when you are finished running a log line and the next system in the log is called.
 
+# Generating codebases
+
+Ideally it should be possible to change the CSV file and change the code where things get executed from but this will take more work.
+
 # CSV file
 
 Have a csv file with your log lines in it, for example:
