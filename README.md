@@ -77,7 +77,7 @@ sl.next({"username": username})
 sl.emit("Generating list of questions")
 questions = []
 # do fancy stuf with questions
-sl.next({"questions": []})
+sl.next({"questions":[]})
 
 ```
 
