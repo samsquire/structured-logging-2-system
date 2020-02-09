@@ -21,6 +21,13 @@ feed	Retrieving feed information	server
 
 # Example
 
+
+```
+index,Checking if signed in,server
+index,Generating list of questions,server
+index,Sending sign in email,emailservice
+
+```
 ```
 class Client:
     def __init__(self):
