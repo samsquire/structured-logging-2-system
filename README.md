@@ -8,7 +8,7 @@ Ideally it should be possible to change the CSV file and change the code where t
 
 # CSV file
 
-Have a csv file with your log lines in it, for example:
+Have a csv file with your log lines in it and where it should run.
 
 ```
 Request	Log	Machine
