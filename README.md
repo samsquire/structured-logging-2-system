@@ -33,6 +33,9 @@ index,Sending sign in email,emailservice
 
 ```
 ```
+from collections import namedtuple
+Line = namedtuple('StructuredLog', 'request line server')
+
 class Client:
     def __init__(self):
         pass
