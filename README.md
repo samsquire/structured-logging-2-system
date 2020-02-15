@@ -74,7 +74,7 @@ class StructuredLog:
 # Usage
 
 ```
-sl = StructuredLog("log.csv", Client())
+sl = StructuredLog("server", "log.csv", Client())
 sl.emit("Checking if signed in")
 signed_in, username, user_email, email_token, login_token = check_signed_in()
 sl.next({"username": username})
