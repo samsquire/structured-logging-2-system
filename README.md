@@ -45,7 +45,8 @@ class Client:
             print("Passing context {} to {}".format(context, url))
 
 class StructuredLog:
-    def __init__(self, filename, client):
+    def __init__(self, service, filename, client):
+        self.service = service
         self.client = client
         self.lines_index = {}
         self.lines = []
@@ -65,8 +66,9 @@ class StructuredLog:
         next_line = self.lines[next_line_index]
         self.line = next_line
         # service is different
-        if self.lines_index[next_line].server != self.lines_index[current_line].server:
+        if self.lines_index[next_line].server != self.service:
             self.client.request(self.lines_index[next_line].server, context)
+
 ```
 
 # Usage
